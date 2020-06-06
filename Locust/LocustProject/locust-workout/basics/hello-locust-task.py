@@ -10,8 +10,8 @@ def task2(m):
 
 
 class Tasks(User):
-    # tasks = [task1, task2]
-    tasks = {task1: 1, task2: 2}
+    tasks = [task1, task2]
+    # tasks = {task1: 1, task2: 2}
     wait_time = constant(1)
 
 # Reference: https://docs.locust.io/en/stable/writing-a-locustfile.html
