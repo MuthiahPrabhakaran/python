@@ -1,11 +1,20 @@
 from locust import task, HttpUser, TaskSet
-
+import logging
 
 class Behaviour(TaskSet):
     @task
     def hit_post_api(self):
-        self.client.put("", {"id": 1, "title": "foo", "body": "bar", "userId": 1})
+        response = self.client.put("", {"id": 1, "title": "foo", "body": "bar", "userId": 1})
         # self.client.put("", data={"id": 1, "title": "foo", "body": "bar", "userId": 1})
+
+        # print out the response elements
+        # print(response.status_code)
+        # print(response.headers)
+        # print(response.request.headers)
+
+        # This is what we might need
+        # print(response.text)
+        logging.info(response.text)
 
 
 class Tasks(HttpUser):
