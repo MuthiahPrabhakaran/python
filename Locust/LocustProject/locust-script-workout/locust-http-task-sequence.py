@@ -19,8 +19,6 @@ class Behaviour(SequentialTaskSet):
     def del_post(self):
         self.client.delete("/posts/1")
 
-    # tasks = [task1, get_post, get_comment, del_post]
-
 
 class Tasks(HttpUser):
     tasks = [Behaviour]
@@ -29,5 +27,5 @@ class Tasks(HttpUser):
     max_wait = 10000
 
 # To run without web
-# locust -f locust-http-task-sequence.py --headless -u 5 -r 2
+# locust -f locust-http-task-sequence.py --headless -u 1 -r 1
 # https://docs.locust.io/en/stable/running-locust-without-web-ui.html
