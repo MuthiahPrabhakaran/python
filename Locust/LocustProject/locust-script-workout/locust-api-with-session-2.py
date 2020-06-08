@@ -3,13 +3,10 @@ from locust import task, HttpUser, SequentialTaskSet
 
 class Behaviour(SequentialTaskSet):
 
-    @task
-    def launch_url(self):
-        global res
+    def on_start(self):
+        global res, res2
         res = self.client.get("/InsuranceWebExtJS/")
         # print(res.cookies['JSESSIONID'])
-
-        global res2
         with self.client.post("/InsuranceWebExtJS/index.jsf",
                               {"login-form": "login-form", "login-form:email": "john.smith@gmail.com",
                                "login-form:password": "john", "login-form:login.x": "47"
