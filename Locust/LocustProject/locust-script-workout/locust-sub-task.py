@@ -5,6 +5,7 @@ class Home(TaskSet):
     @task()
     def home(self):
         print("I am in home page")
+        print("Parent token "+self.parent.token)
 
     @task()
     def stop(self):
@@ -21,14 +22,27 @@ class ViewProduct(TaskSet):
         print("read review")
 
     @task()
+    def add_to_cart(self):
+        print("I am in cart section")
+        self.schedule_task(Cart, first=True)
+
+    @task()
     def stop(self):
         self.interrupt(reschedule=False)
 
 
 class Cart(TaskSet):
     @task()
-    def cart(self):
-        print("I am in cart page")
+    def apply_promo_code(self):
+        print("Apply promo code")
+
+    @task()
+    def remove_product(self):
+        print("Remove the product")
+
+    @task()
+    def payment(self):
+        print("I am in payment page")
 
     @task()
     def stop(self):
@@ -38,9 +52,10 @@ class Cart(TaskSet):
 class Behaviour(TaskSet):
     def on_start(self):
         print("User log in")
+        self.token = "dummy token"
 
     # tasks = [Home, ViewProduct, Cart]
-    tasks = {Home: 5, ViewProduct: 4, Cart: 3}
+    tasks = {Home: 5, ViewProduct: 4}
 
     @task(2)
     def contact_us(self):

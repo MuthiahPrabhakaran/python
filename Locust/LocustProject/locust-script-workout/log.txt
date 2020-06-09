@@ -1,0 +1,9 @@
+[2020-06-09 08:01:32,832] DESKTOP-K3D4S9I/WARNING/locust.main: System open file limit setting is not high enough for load testing, and the OS wouldnt allow locust to increase it by itself. See https://docs.locust.io/en/stable/installation.html#increasing-maximum-number-of-open-files-limit for more info.
+[2020-06-09 08:01:32,833] DESKTOP-K3D4S9I/INFO/locust.main: Run time limit set to 10 seconds
+[2020-06-09 08:01:32,834] DESKTOP-K3D4S9I/INFO/locust.main: Starting Locust 1.0.3
+[2020-06-09 08:01:32,835] DESKTOP-K3D4S9I/INFO/locust.runners: Hatching and swarming 1 users at the rate 1 users/s (0 users already running)...
+[2020-06-09 08:01:32,835] DESKTOP-K3D4S9I/INFO/locust.runners: All users hatched: Tasks: 1 (0 already running)
+[2020-06-09 08:01:41,317] DESKTOP-K3D4S9I/INFO/locust.main: Time limit reached. Stopping Locust.
+[2020-06-09 08:01:41,318] DESKTOP-K3D4S9I/INFO/locust.main: Running teardowns...
+[2020-06-09 08:01:41,318] DESKTOP-K3D4S9I/INFO/locust.main: Shutting down (exit code 0), bye.
+[2020-06-09 08:01:41,319] DESKTOP-K3D4S9I/INFO/locust.main: Cleaning up runner...
