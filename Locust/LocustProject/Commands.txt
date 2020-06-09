@@ -1,0 +1,14 @@
+# To run for certain number of seconds in headless with log file
+locust -f locust-json.py --headless -u 1 -r 1 --run-time=10 --logfile=log.txt
+
+# To run master-slave
+locust -f locust-json.py --master
+locust -f locust-api-grouping.py --worker --master-host=127.0.0.1
+
+# To run master-slave in headless mode
+locust -f locust-json.py --master --expect-workers=2 --headless -u 10 -r 2
+locust -f locust-api-grouping.py --worker --master-host=127.0.0.1
+
+# To generate CSV through terminal
+locust -f locust-success-failure-api.py --headless -u 10 -r 2 --run-time=10 --csv=Stats
+locust -f locust-success-failure-api.py --headless -u 10 -r 2 --run-time=10 --csv=Stats -t2m
