@@ -1,0 +1,4 @@
+Test string
+New Line
+Another string
+Appended String from append mode
