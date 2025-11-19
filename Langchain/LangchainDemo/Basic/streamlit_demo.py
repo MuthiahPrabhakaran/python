@@ -1,5 +1,8 @@
 from langchain_ollama import ChatOllama
 import streamlit as st
+from langchain_core.globals import set_debug
+
+set_debug(True)
 
 llm = ChatOllama(model="mistral")
 
